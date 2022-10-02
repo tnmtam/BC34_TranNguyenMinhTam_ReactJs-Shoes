@@ -1,44 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 export default class SanPham extends Component {
   render() {
-    let { stateShoes } = this.props;
-
+    let {shoes} = this.props;
     return (
-      <div className="col-12 row pt-4">
-        <div className="col-5">
-          <h2>{stateShoes.name}</h2>
-
-          <img
-            className="img-fluid"
-            style={{ height: "300px" }}
-            src={stateShoes.image}
-          />
+        <div className="col-4">
+        <div className="card mb-5">
+            <img className="card-img-top" src={shoes.image} />
+            <div className="card-body text-left">
+                <h4 className="card-title">{shoes.name}</h4>
+                <h5>{shoes.price} $</h5>
+                <button className="btn btn-dark" onClick={()=>this.props.xemChiTiet(shoes)}>Add to carts</button>
+            </div>
         </div>
-        <div className="col-6">
-          <h2>Thông tin sản phẩm</h2>
-          <table className="table text-left">
-            <tbody>
-              <tr>
-                <td>Mô Tả Sản Phẩm</td>
-                <td>{stateShoes.description}</td>
-              </tr>
-              <tr>
-                <td>Điểm nổi bật</td>
-                <td>{stateShoes.shortDescription}</td>
-              </tr>
-              <tr>
-                <td>Giá</td>
-                <td>{stateShoes.price}$</td>
-              </tr>
-              <tr>
-                <td>Số lượng</td>
-                <td>{stateShoes.quantity}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    );
+    </div>
+    )
   }
 }
