@@ -1,21 +1,37 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class ShoesDetail extends Component {
   render() {
-    const { shoes } = this.props
+    const { shoes } = this.props;
     return (
       <div>
         <div className="row">
-          <div className="col-12">
-            <img style={{ width: '300px' }} src={shoes.image} alt="" />
+          <div className="col-6 text-left">
+            <h3>{shoes.name}</h3>
+            <img src={shoes.image} width={250} height={300} />
           </div>
-          <div className="col-12 text-left">
-            <h1>{shoes.name}</h1>
-            <h4 className='fs-5'>{shoes.price} $</h4>
-            <span>Description: {shoes.description}</span>
+          <div className="col-6">
+            <table className="table">
+              <tr>
+                <th className="border-right">Mô tả</th>
+                <td>{shoes.description}</td>
+              </tr>
+              <tr>
+                <th className="border-right">Điểm nổi bật</th>
+                <td>{shoes.shortDescription}</td>
+              </tr>
+              <tr>
+                <th className="border-right">Giá</th>
+                <td>{shoes.price} $</td>
+              </tr>
+              <tr>
+                <th className="border-right">Số lượng</th>
+                <td>{shoes.quantity}</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
