@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import TrangChu from './component/bt_shoes/TrangChu';
+import ShoesShop from './Components/BT_ShoesShop/ShoesShop';
 
 function App() {
   return (
     <div className="App">
-      <TrangChu />
+      <ShoesShop />
     </div>
   );
 }
